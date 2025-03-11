@@ -15,7 +15,7 @@ git clone https://git.suckless.org/st
 git clone https://git.suckless.org/slstatus
 
 # copy configs
-cp ~/gh-repos/personal/personal-suckless-configs/dwm ~/.config/suckless/dwm/config.h
+cp ~/gh-repos/personal/personal-suckless-configs/dwm-patch ~/.config/suckless/dwm/config.h
 cp ~/gh-repos/personal/personal-suckless-configs/dmenu ~/.config/suckless/dmenu/config.h
 cp ~/gh-repos/personal/personal-suckless-configs/st ~/.config/suckless/st/config.h
 cp ~/gh-repos/personal/personal-suckless-configs/slstatus ~/.config/suckless/slstatus/config.h
