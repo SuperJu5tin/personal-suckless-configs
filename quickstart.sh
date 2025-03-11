@@ -32,6 +32,9 @@ if ! command -v yay &> /dev/null; then
     cd .. && rm -rf yay
 fi
 
+# install nerd fonts
+yay -S nerd-fonts
+
 # install ly tui greeter
 yay -S ly
 
@@ -53,19 +56,33 @@ git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.oh-my
 
 
 echo "add this to your .zshcrc"
-echo "# Terminal autocomplete fix
+echo "
+# Terminal autocomplete fix
 autoload -Uz compinit && compinit
 
 plugins=(
     git
     docker
     asdf
+    nvm
+    npm
     zsh-autosuggestions
-    zsh-completions 
-    zsh-history-substring-search 
+    zsh-completions
+    zsh-history-substring-search
     zsh-syntax-highlighting
 )
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source \$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source \$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
+"
+
+echo "
+This isn't bad to add either
+
+export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/init-nvm.sh
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+
 "
