@@ -1,4 +1,6 @@
 
+# install xorg
+pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
 
 # move to the gh-repos
 mkdir -p ~/gh-repos/personal/personal-suckless-configs
