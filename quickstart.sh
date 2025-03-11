@@ -40,6 +40,10 @@ yay -S nerd-fonts
 # install ly tui greeter
 yay -S ly
 
+sudo systemctl enable ly.service
+sudo systemctl start ly.service
+
+
 # install brightnessctl
 yay -S brightnessctl
 
@@ -50,6 +54,7 @@ yay -S zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
 # autosuggesions plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -77,14 +82,10 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
-"
-
-echo "
-This isn't bad to add either
 
 export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/init-nvm.sh
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 
-"
+" > ~/.zshrc
