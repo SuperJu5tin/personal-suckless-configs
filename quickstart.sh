@@ -32,6 +32,9 @@ if ! command -v yay &> /dev/null; then
     cd .. && rm -rf yay
 fi
 
+# install ly tui greeter
+yay -S ly
+
 # install brightnessctl
 yay -S brightnessctl
 
