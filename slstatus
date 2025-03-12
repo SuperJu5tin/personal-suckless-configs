@@ -67,7 +67,8 @@ static const struct arg args[] = {
 	/* function	format          	argument */
 	{ ram_used,	"\x03    %s",		"%s" },
 	{ ram_total,	"/%s",		    	"%s" },
-	{ run_command, "    %s%%", "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}'" },
+	{ run_command, 	"  %s  ",		"~/Scripts/get-muted-status.sh" },
+	{ run_command, 	"%s%%",			"~/Scripts/get-vol-perc.sh" },
 	{ battery_perc,	"  󰂁 %s%%", 		"BAT0" }, 
 	{ wifi_essid,	"    %s",		"wlp0s20f3" },
 	{ datetime,	"%s",			"   %m-%d-%Y  󰥔 %T ",},
