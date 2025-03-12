@@ -43,6 +43,16 @@ yay -S ly
 sudo systemctl enable ly.service
 sudo systemctl start ly.service
 
+echo "\n[sessions]\ndefault_session=dwm" | sudo tee -a /etc/ly/config.ini
+
+# background
+yay -S feh
+mkdir ~/Pictures
+cp ~/gh-repos/personal/personal-suckless-configs/background.jpg ~/Pictures
+feh --bg-scale ~/Pictures/background.jpg
+
+# transparent effects
+yay -S picom
 
 # install brightnessctl
 yay -S brightnessctl
