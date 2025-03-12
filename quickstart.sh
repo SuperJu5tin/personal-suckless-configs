@@ -1,6 +1,13 @@
-
 # install xorg
 pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+
+# xinit file
+touch ~/.xinitrc
+echo "feh --bg-scale ~/Pictures/background.jpg
+picom &
+exec slstatus &
+exec dwm
+" > ~/.xinitrc
 
 # move to the gh-repos
 mkdir -p ~/gh-repos/personal/personal-suckless-configs
@@ -13,6 +20,16 @@ git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/slstatus
+
+# apply patches
+cd ~/.config/suckless/dwm
+curl -O https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff
+curl -O https://dwm.suckless.org/patches/statuscolors/dwm-statuscolors-20220322-bece862.diff
+curl -O https://dwm.suckless.org/patches/vanitygaps/dwm-vanitygaps-20190508-6.2.diff
+
+patch -p1 < dwm-pertag-20200914-61bb8b2.diff
+patch -p1 < dwm-statuscolors-20220322-bece862.diff
+patch -p1 < dwm-vanitygaps-20190508-6.2.diff
 
 # copy configs
 cp ~/gh-repos/personal/personal-suckless-configs/dwm-patch ~/.config/suckless/dwm/config.h
